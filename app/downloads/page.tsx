@@ -15,9 +15,17 @@ export interface Release {
 
 const releases: Release[] = [
   {
-    version: "1.0.2",
+    version: "1.0.3",
     date: "March 2026",
     isLatest: true,
+    changelog: [
+      "Bug fixes and performance improvements",
+    ],
+    downloadUrl: "/Sambhav_Services_Setup_v1.0.3.exe",
+  },
+  {
+    version: "1.0.2",
+    date: "March 2026",
     changelog: [
       "Windows platform details added to privacy policy",
       "Invoice timeline now shows delivery details and comments",
