@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Privacy Policy – Sambhav Services",
   description:
-    "Privacy Policy for Sambhav Services business management application by Lakshya Business Solutions.",
+    "Privacy Policy for Sambhav Services business management application by Shailendra Badjatya.",
   icons: { icon: "/logo.png" },
 };
 

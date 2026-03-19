@@ -94,7 +94,7 @@ export default function PrivacyPolicy() {
             className="flex flex-wrap justify-center gap-3 mt-8"
           >
             {[
-              { label: "Developer", value: "Lakshya Business Solutions" },
+              { label: "Developer", value: "Shailendra Badjatya" },
               { label: "Effective Date", value: "March 19, 2025" },
               { label: "Last Updated", value: "March 19, 2025" },
             ].map((item) => (
@@ -131,7 +131,7 @@ export default function PrivacyPolicy() {
           <SectionCard icon="📋" number={1} title="Introduction">
             <p>
               Welcome to <strong className="text-gray-800">Sambhav Services</strong>, a business management application
-              developed by <strong className="text-gray-800">Lakshya Business Solutions</strong> ("we", "us", or "our").
+              developed by <strong className="text-gray-800">Shailendra Badjatya</strong> ("we", "us", or "our").
             </p>
             <p>
               This Privacy Policy explains how we collect, use, store, and protect your personal information
@@ -347,7 +347,7 @@ export default function PrivacyPolicy() {
               transition={{ duration: 0.2 }}
               className="mt-4 bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100 rounded-2xl p-6 text-center"
             >
-              <p className="font-bold text-gray-800 text-lg">Lakshya Business Solutions</p>
+              <p className="font-bold text-gray-800 text-lg">Shailendra Badjatya</p>
               <a
                 href="mailto:sammedtechno@gmail.com"
                 className="text-blue-600 font-semibold text-xl mt-1 block hover:underline"
@@ -370,7 +370,7 @@ export default function PrivacyPolicy() {
         viewport={{ once: true }}
         className="text-center py-10 text-gray-400 text-sm border-t border-gray-200 bg-white"
       >
-        <p className="font-medium text-gray-500">© 2025 Lakshya Business Solutions. All rights reserved.</p>
+        <p className="font-medium text-gray-500">© 2025 Shailendra Badjatya. All rights reserved.</p>
         <p className="mt-1">Sambhav Services – Privacy Policy</p>
       </motion.footer>
 
