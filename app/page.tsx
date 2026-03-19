@@ -95,8 +95,9 @@ export default function PrivacyPolicy() {
           >
             {[
               { label: "Developer", value: "Shailendra Badjatya" },
+              { label: "Platforms", value: "Android · Windows" },
               { label: "Effective Date", value: "March 19, 2025" },
-              { label: "Last Updated", value: "March 19, 2025" },
+              { label: "Last Updated", value: "March 19, 2026" },
             ].map((item) => (
               <div
                 key={item.label}
@@ -176,9 +177,12 @@ export default function PrivacyPolicy() {
 
         {/* 3. Phone State */}
         <AnimatedSection delay={0.1}>
-          <SectionCard icon="📱" number={3} title="Phone State & SIM Access">
+          <SectionCard icon="📱" number={3} title="Phone State & SIM Access (Android Only)">
+            <div className="inline-flex items-center gap-1.5 bg-green-50 border border-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full mb-3">
+              <span>🤖</span> Android Platform Only
+            </div>
             <p>
-              The App requests <code className="bg-blue-50 text-blue-700 px-1.5 py-0.5 rounded text-xs font-mono">READ_PHONE_STATE</code> and{" "}
+              On Android, the App requests <code className="bg-blue-50 text-blue-700 px-1.5 py-0.5 rounded text-xs font-mono">READ_PHONE_STATE</code> and{" "}
               <code className="bg-blue-50 text-blue-700 px-1.5 py-0.5 rounded text-xs font-mono">READ_PHONE_NUMBERS</code> permissions for the following security purpose:
             </p>
             <ul className="list-disc list-inside space-y-1.5 mt-2">
@@ -189,12 +193,51 @@ export default function PrivacyPolicy() {
             <div className="mt-4 bg-amber-50 border border-amber-100 rounded-xl p-4 text-amber-800 text-sm">
               <strong>⚠️ Important:</strong> We do NOT use this permission to track your location, read call logs, intercept SMS messages, or auto-collect your phone number. SIM state data is used exclusively for account security and is never shared with third parties.
             </div>
+            <p className="mt-3 text-sm text-gray-500">
+              The Windows version of Sambhav Services does <strong>not</strong> request or use phone state permissions. SIM verification is skipped entirely on Windows.
+            </p>
           </SectionCard>
         </AnimatedSection>
 
-        {/* 4. How We Use */}
+        {/* 4. Windows Platform */}
         <AnimatedSection delay={0.1}>
-          <SectionCard icon="⚙️" number={4} title="How We Use Your Information">
+          <SectionCard icon="🖥️" number={4} title="Windows Platform">
+            <div className="inline-flex items-center gap-1.5 bg-blue-50 border border-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full mb-3">
+              <span>🪟</span> Windows Platform
+            </div>
+            <p>
+              Sambhav Services is also available on <strong className="text-gray-800">Microsoft Windows</strong> via the Microsoft Store. The Windows version provides the same core business functionality with the following platform-specific differences:
+            </p>
+            <ul className="mt-3 space-y-2">
+              {[
+                { title: "No SIM / Phone Permissions", desc: "Windows devices do not have SIM cards. No phone state permissions are requested or used." },
+                { title: "No Push Notifications via FCM", desc: "Firebase Cloud Messaging push notifications are not available on Windows. In-app alerts are used instead." },
+                { title: "Local Authentication", desc: "Windows Hello (biometric/PIN) may be used for quick re-authentication if the device supports it." },
+                { title: "Data Storage", desc: "All business data is stored in Google Firebase (same as Android). No data is stored locally on the Windows device beyond login session state." },
+                { title: "No Advertising or Tracking", desc: "The Windows version does not use any advertising SDKs, tracking pixels, or analytics libraries." },
+              ].map((item, i) => (
+                <motion.li
+                  key={i}
+                  initial={{ opacity: 0, x: -16 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.07 }}
+                  className="flex items-start gap-2"
+                >
+                  <span className="text-blue-500 mt-1 flex-shrink-0">✓</span>
+                  <span><strong className="text-gray-700">{item.title}:</strong> {item.desc}</span>
+                </motion.li>
+              ))}
+            </ul>
+            <div className="mt-4 bg-blue-50 border border-blue-100 rounded-xl p-4 text-blue-800 text-sm">
+              <strong>Microsoft Store:</strong> Sambhav Services on Windows complies with Microsoft Store policies and the Windows App SDK privacy guidelines. The app does not access any Windows-restricted capabilities beyond what is declared in its package manifest.
+            </div>
+          </SectionCard>
+        </AnimatedSection>
+
+        {/* 5. How We Use */}
+        <AnimatedSection delay={0.1}>
+          <SectionCard icon="⚙️" number={5} title="How We Use Your Information">
             <p>We use collected information solely for the following purposes:</p>
             <ul className="mt-2 space-y-2">
               {[
@@ -224,9 +267,9 @@ export default function PrivacyPolicy() {
           </SectionCard>
         </AnimatedSection>
 
-        {/* 5. Data Storage */}
+        {/* 6. Data Storage */}
         <AnimatedSection delay={0.1}>
-          <SectionCard icon="🔒" number={5} title="Data Storage & Security">
+          <SectionCard icon="🔒" number={6} title="Data Storage & Security">
             <p>
               All data is stored securely using <strong className="text-gray-800">Google Firebase</strong> (Firestore and Firebase Authentication), which complies with industry-standard security practices including encryption in transit (TLS) and at rest.
             </p>
@@ -239,9 +282,9 @@ export default function PrivacyPolicy() {
           </SectionCard>
         </AnimatedSection>
 
-        {/* 6. Third Party */}
+        {/* 7. Third Party */}
         <AnimatedSection delay={0.1}>
-          <SectionCard icon="🔗" number={6} title="Third-Party Services">
+          <SectionCard icon="🔗" number={7} title="Third-Party Services">
             <p>The App uses the following third-party services:</p>
             <div className="mt-4 rounded-xl overflow-hidden border border-gray-100">
               <table className="w-full text-sm">
@@ -280,9 +323,9 @@ export default function PrivacyPolicy() {
           </SectionCard>
         </AnimatedSection>
 
-        {/* 7. Data Sharing */}
+        {/* 8. Data Sharing */}
         <AnimatedSection delay={0.1}>
-          <SectionCard icon="🤝" number={7} title="Data Sharing & Disclosure">
+          <SectionCard icon="🤝" number={8} title="Data Sharing & Disclosure">
             <p>We do <strong className="text-gray-800">not</strong> sell, rent, or trade your personal information. We may share data only in these limited circumstances:</p>
             <ul className="mt-2 space-y-1.5 list-disc list-inside">
               <li><strong className="text-gray-700">Within the business:</strong> Staff data is visible to authorized administrators of the same business account</li>
@@ -292,9 +335,9 @@ export default function PrivacyPolicy() {
           </SectionCard>
         </AnimatedSection>
 
-        {/* 8. Data Retention */}
+        {/* 9. Data Retention */}
         <AnimatedSection delay={0.1}>
-          <SectionCard icon="🗓️" number={8} title="Data Retention">
+          <SectionCard icon="🗓️" number={9} title="Data Retention">
             <p>
               Business data (invoices, clients, tasks) is retained for as long as the business account remains active. Staff account data is retained until deleted by an administrator.
             </p>
@@ -304,31 +347,32 @@ export default function PrivacyPolicy() {
           </SectionCard>
         </AnimatedSection>
 
-        {/* 9. Children */}
+        {/* 10. Children */}
         <AnimatedSection delay={0.1}>
-          <SectionCard icon="👶" number={9} title="Children's Privacy">
+          <SectionCard icon="👶" number={10} title="Children's Privacy">
             <p>
               Sambhav Services is a business application intended for adults (18 years and older). We do not knowingly collect any information from children under the age of 13. If we become aware that a child has provided personal information, we will delete it immediately.
             </p>
           </SectionCard>
         </AnimatedSection>
 
-        {/* 10. Your Rights */}
+        {/* 11. Your Rights */}
         <AnimatedSection delay={0.1}>
-          <SectionCard icon="✅" number={10} title="Your Rights">
+          <SectionCard icon="✅" number={11} title="Your Rights">
             <p>As a user of this app, you have the right to:</p>
             <ul className="mt-2 space-y-1.5 list-disc list-inside">
               <li>Request access to the personal data we hold about you</li>
               <li>Request correction of inaccurate data</li>
               <li>Request deletion of your account and associated data</li>
               <li>Withdraw consent for phone state access via Android app permissions settings</li>
+              <li>On Windows, uninstall the app at any time to stop all local data access</li>
             </ul>
           </SectionCard>
         </AnimatedSection>
 
-        {/* 11. Changes */}
+        {/* 12. Changes */}
         <AnimatedSection delay={0.1}>
-          <SectionCard icon="🔄" number={11} title="Changes to This Policy">
+          <SectionCard icon="🔄" number={12} title="Changes to This Policy">
             <p>
               We may update this Privacy Policy from time to time. When we do, we will update the &ldquo;Last Updated&rdquo; date at the top of this page. Continued use of the app after changes constitutes acceptance of the updated policy.
             </p>
@@ -338,9 +382,9 @@ export default function PrivacyPolicy() {
           </SectionCard>
         </AnimatedSection>
 
-        {/* 12. Contact */}
+        {/* 13. Contact */}
         <AnimatedSection delay={0.1}>
-          <SectionCard icon="📬" number={12} title="Contact Us">
+          <SectionCard icon="📬" number={13} title="Contact Us">
             <p>If you have any questions, concerns, or requests regarding this Privacy Policy, please contact us:</p>
             <motion.div
               whileHover={{ scale: 1.02 }}
