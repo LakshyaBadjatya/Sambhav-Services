@@ -370,7 +370,7 @@ export default function PrivacyPolicy() {
         viewport={{ once: true }}
         className="text-center py-10 text-gray-400 text-sm border-t border-gray-200 bg-white"
       >
-        <p className="font-medium text-gray-500">© 2025 Shailendra Badjatya. All rights reserved.</p>
+        <p className="font-medium text-gray-500">© 2026 Shailendra Badjatya. All rights reserved.</p>
         <p className="mt-1">Sambhav Services – Privacy Policy</p>
       </motion.footer>
 
