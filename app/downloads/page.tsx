@@ -15,9 +15,19 @@ export interface Release {
 
 const releases: Release[] = [
   {
-    version: "2.0.3",
+    version: "2.0.4",
     date: "March 2026",
     isLatest: true,
+    changelog: [
+      "Bug fixes and stability improvements",
+      "Performance optimizations",
+      "Minor UI enhancements",
+    ],
+    downloadUrl: "/Sambhav_Services_Setup_v2.0.4.exe",
+  },
+  {
+    version: "2.0.3",
+    date: "March 2026",
     changelog: [
       "Bug fixes and stability improvements",
       "Performance optimizations",
@@ -155,12 +165,30 @@ export default function DownloadsPage() {
             Sambhav Services – Windows Desktop Application
           </motion.p>
 
+          {/* Download CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.55, duration: 0.6 }}
+            className="mt-8 flex justify-center"
+          >
+            <a
+              href={latest.downloadUrl}
+              className="inline-flex items-center gap-2.5 bg-white text-[#1a73e8] font-bold text-base px-7 py-3.5 rounded-2xl shadow-lg shadow-black/20 hover:bg-blue-50 active:scale-95 transition-all"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V3" />
+              </svg>
+              Download v{latest.version}
+            </a>
+          </motion.div>
+
           {/* Meta pills */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.6 }}
-            className="flex flex-wrap justify-center gap-3 mt-8"
+            className="flex flex-wrap justify-center gap-3 mt-6"
           >
             {[
               { label: "Platform", value: "Windows 10 / 11" },
