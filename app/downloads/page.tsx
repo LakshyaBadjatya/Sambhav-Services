@@ -15,9 +15,20 @@ export interface Release {
 
 const releases: Release[] = [
   {
-    version: "2.0.4",
+    version: "3.0.0",
     date: "March 2026",
     isLatest: true,
+    changelog: [
+      "Major update with new features and improvements",
+      "Bug fixes and stability improvements",
+      "Performance optimizations",
+      "Minor UI enhancements",
+    ],
+    downloadUrl: "/Sambhav_Services_Setup_v3.0.0.exe",
+  },
+  {
+    version: "2.0.4",
+    date: "March 2026",
     changelog: [
       "Bug fixes and stability improvements",
       "Performance optimizations",
